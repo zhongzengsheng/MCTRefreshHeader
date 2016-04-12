@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //设置
     _refreshHeader.scrollView = self.tableView;
     
     __weak typeof(self) weakSelf = self;
@@ -27,6 +28,8 @@
     [_refreshHeader setRefreshingBlock:^{
         [weakSelf requestData];
     }];
+    
+    //首次请求
     [_refreshHeader headerBeginRefreshing];
 }
 
